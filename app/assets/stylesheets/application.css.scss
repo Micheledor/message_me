@@ -20,8 +20,13 @@
 
  .msg {
    color: darkslategrey;
+   font-weight: 400;
  }
 
  .usermsg {
    color: coral;
+ }
+ #messages {
+   overflow: auto;
+   height: 15em;
  }

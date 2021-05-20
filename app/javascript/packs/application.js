@@ -13,8 +13,26 @@ $(document).on("turbolinks:load", function() {
   $(".ui.dropdown").dropdown();
     $('.message .close').on('click', function() {
       $(this).closest('.message').transition('fade');
-    }); 
+    });
+    scrollBottom();
+    submitMsg();
 })
+
+scrollBottom = function() {
+  if ($('#messages').length > 0 ) {
+    $('#messages').scrollTop($('#messages')[0].scrollHeight)
+  }
+}
+
+submitMsg = function() {
+  $('#message_body').on('keydown', function(e) {
+    if (e.keyCode == 13) {
+      $('button').click();
+      console.log(e.target.value)
+      e.target.value = '';
+    }
+  })
+}
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
