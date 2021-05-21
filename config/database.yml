@@ -19,6 +19,11 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-
-host: /var/run/postgresql
+  
+production:
+      host: /var/run/postgresql
+      adapter: postgresql
+      database: my_database_production
+      pool: 5
+      timeout: 5000
 
