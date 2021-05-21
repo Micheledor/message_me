@@ -23,6 +23,7 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'faker'
 gem 'pg'
+gem 'activerecord-postgresql-adapter'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

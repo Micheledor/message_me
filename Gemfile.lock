@@ -45,6 +45,8 @@ GEM
     activerecord (6.0.3.7)
       activemodel (= 6.0.3.7)
       activesupport (= 6.0.3.7)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activestorage (6.0.3.7)
       actionpack (= 6.0.3.7)
       activejob (= 6.0.3.7)
@@ -212,6 +214,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   bcrypt
   bootsnap (>= 1.4.2)
   byebug
