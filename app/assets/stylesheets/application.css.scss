@@ -26,7 +26,20 @@
  .usermsg {
    color: coral;
  }
+
  #messages {
    overflow: auto;
    height: 15em;
  }
+
+.link {
+  color: white;
+  :hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.h1-header {
+  text-align: center;
+}

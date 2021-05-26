@@ -1,5 +1,18 @@
 class SessionsController < ApplicationController
   before_action :logged_in_redirect, only: [:new, :create]
+
+  def signup
+    user = User.new
+  end
+
+  def register
+    user = User.new(username: params[:session][:username], password: params[:session][:password])
+    user.save
+    user.authenticate(params[:session][:password])
+    session[:user_id] = user.id
+    flash[:success] = 'Successfully registered in'
+    redirect_to root_path
+  end  
   
   def new
   end
