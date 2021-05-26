@@ -7,11 +7,15 @@ class SessionsController < ApplicationController
 
   def register
     user = User.new(username: params[:session][:username], password: params[:session][:password])
-    user.save
-    user.authenticate(params[:session][:password])
-    session[:user_id] = user.id
-    flash[:success] = 'Successfully registered in'
-    redirect_to root_path
+    if user.save
+      user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
+      flash[:success] = 'Successfully registered in'
+      redirect_to root_path
+    else
+      flash.now[:error] = 'You need to enter a valid e-mail and a valid password to register'
+      render 'new'
+    end
   end  
   
   def new
